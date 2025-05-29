@@ -21,6 +21,7 @@ class BusinessData(Base):
     naics = Column(String)
 
 
+# This is my real password 😬, don't use it.
 DATABASE_URL = "postgresql://postgres:admin123@localhost:5432/business_data_db"
 
 engine = create_engine(DATABASE_URL)

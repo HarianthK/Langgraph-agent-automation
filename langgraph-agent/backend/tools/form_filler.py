@@ -12,18 +12,18 @@ def fill_form(data):
     chrome_options.add_argument("--headless=new")
     chrome_options.add_argument("--disable-gpu")
 
-    # Set path to your ChromeDriver if not in PATH
+    # Setting path to the ChromeDriver if not in PATH
     driver = webdriver.Chrome(options=chrome_options)
 
     try:
-        # ✅ Replace the fake test link with a real test form:
+        # ✅ Practice-test-link
         driver.get("https://www.techlistic.com/p/selenium-practice-form.html")
 
-        time.sleep(2)  # Let the page load a bit
-        # Just for visual confirmation
+        time.sleep(2)  # Waiting for the page to load
+        # For visual confirmation
         driver.save_screenshot("form_test_screenshot.png")
 
-        # You can later add automation here (e.g., filling name, selecting gender, etc.)
+        # We can later add automation here (e.g., filling name, selecting gender, etc.) after getting the actual link.
         print("✅ Test page opened and screenshot taken.")
         return "Form opened and simulated."
 
