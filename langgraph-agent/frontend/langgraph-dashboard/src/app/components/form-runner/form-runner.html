@@ -1,0 +1,35 @@
+<div class="form-container">
+  <h2>Run Agent</h2>
+
+  <label>Street Address:</label>
+  <input [(ngModel)]="address" placeholder="123 Main St" />
+
+  <label>City:</label>
+  <input [(ngModel)]="city" placeholder="City name" />
+
+  <label>State:</label>
+  <input [(ngModel)]="state" placeholder="e.g. AZ" />
+
+  <label>Business Description:</label>
+  <input [(ngModel)]="description" placeholder="e.g. coffee shop" />
+
+  <button (click)="runAgent()">Run Agent</button>
+
+  <div *ngIf="isLoading">🔄 Running agent...</div>
+  <div *ngIf="error" style="color: red;">{{ error }}</div>
+  <div *ngIf="result?.result">
+  <h3>✅ Agent Result</h3>
+  <p><strong>Zip Code:</strong> {{ result.result.data.zip_code }}</p>
+  <p><strong>City:</strong> {{ result.result.data.city }}</p>
+  <p><strong>State:</strong> {{ result.result.data.state }}</p>
+  <p><strong>Latitude:</strong> {{ result.result.data.latitude }}</p>
+  <p><strong>Longitude:</strong> {{ result.result.data.longitude }}</p>
+  <p><strong>Census Tract:</strong> {{ result.result.data.census_tract }}</p>
+  <p><strong>Population:</strong> {{ result.result.data.population }}</p>
+  <p><strong>Country:</strong> {{ result.result.data.country }}</p>
+  <p><strong>Is Capital:</strong> {{ result.result.data.is_capital }}</p>
+  <p><strong>Description:</strong> {{ result.result.data.business_description }}</p>
+  <p><strong>NAICS Info:</strong> {{ result.result.data.naics }}</p>
+  </div>
+
+</div>
