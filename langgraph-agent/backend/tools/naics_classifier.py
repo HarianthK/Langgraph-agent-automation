@@ -9,7 +9,7 @@ def classify_business(description: str) -> str:
         command = [
             OLLAMA_PATH, "run", "mistral",
             # Prompt for ollama to get the naics for the given description
-            f"What is the NAICS code for this business: {description}?"
+            f"Give me the NAICS code for this business: {description}?"
         ]
 
         result = subprocess.run(
@@ -38,7 +38,7 @@ def infer_zip_and_census(city: str, state: str) -> tuple[str, str]:
         command = [
             OLLAMA_PATH, "run", "mistral",
             # Prompt for ollama to get the naics for the given description
-            f"Only respond with ZIP code and Census Tract separated by a space for city '{city}' and state '{state}'."
+            f"Only respond with ZIP code and Census Tract separated by a space for city '{city}' in state '{state}'."
         ]
         result = subprocess.run(
             command,
